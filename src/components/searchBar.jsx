@@ -6,8 +6,13 @@ export default function SearchBar({setData,api_key}) {
     const handleSubmit = (e)=>{
         e.preventDefault()    
         axios.get(`https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${search}&aqi=yes`).then((resp)=>{
+            if( resp.status !== 200){
+                    alert("Inavlid input check again!!")
+            }
             setData(resp.data)
-        })
+        }).catch(
+            alert("Invalid input!! check again")
+        )
 
     }
     
