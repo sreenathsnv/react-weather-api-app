@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-export default function SearchBar({setData}) {
+export default function SearchBar({setData,api_key}) {
 
     const [search,setSearch] = useState("")
     const handleSubmit = (e)=>{
         e.preventDefault()    
-        axios.get(`https://api.weatherapi.com/v1/current.json?key=0a4fb39fe48e40ee95844519241305&q=${search}&aqi=yes`).then((resp)=>{
+        axios.get(`https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${search}&aqi=yes`).then((resp)=>{
             setData(resp.data)
         })
 

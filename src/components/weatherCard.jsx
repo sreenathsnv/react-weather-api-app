@@ -2,7 +2,7 @@ import React from 'react'
 import sunnyImage from '../assets/sunny.png'
 import nightImage from '../assets/night.png'
 export default function WeatherCard({data}) {
-  console.log(data)
+  console.log(data.location)
   return (
     <div className="card-container">
       <div className='header-card'>
